@@ -1,1 +1,21 @@
-# GitOps_k8s
+[TOC]
+
+
+
+k8s 基础
+
+- [nginx-pod.yaml](nginx-pod.yaml) 基础的pod 配置文件,带init,带Volume
+- imperative-deployment.sh 命令式脚本
+- declarative-deployment.yaml 申明式配置
+- controller.sh  bash写的控制器,循环,声明,清除, 根据configmap变化更新静态内容
+
+
+
+CICD
+
+- gitops-resources.yaml  SA及绑定
+- gitops-cronjob.yaml  协商循环
+- gitops-ci.sh 单项目ci脚本
+
+
+
