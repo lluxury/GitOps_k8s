@@ -21,9 +21,20 @@
 
 需要一个位置存储文件,主,从,前端的部署和服务
 
+在qa和e2e分别部署以下pod及服务
+
 - redis-master-deployment.yaml 
 - redis-master-service.yaml
 - redis-slave-deployment.yaml
 - redis-slave-service.yaml
 - frontend-deployment.yaml     
 - frontend-service.yaml  
+
+
+
+网络隔离
+
+- curlpod.yaml  配置curl
+- web.yaml  配置nginx
+- block-other-namespace.yaml  ns策略
+
