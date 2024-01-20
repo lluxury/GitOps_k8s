@@ -1,8 +1,6 @@
 [TOC]
 
-
-
-k8s 基础
+###### k8s 基础
 
 - [nginx-pod.yaml](nginx-pod.yaml) 基础的pod 配置文件,带init,带Volume
 - imperative-deployment.sh 命令式脚本
@@ -11,7 +9,7 @@ k8s 基础
 
 
 
-CICD
+###### CICD
 
 - gitops-resources.yaml  SA及绑定
 - gitops-cronjob.yaml  协商循环
@@ -19,3 +17,13 @@ CICD
 
 
 
+###### 环境分区
+
+需要一个位置存储文件,主,从,前端的部署和服务
+
+- redis-master-deployment.yaml 
+- redis-master-service.yaml
+- redis-slave-deployment.yaml
+- redis-slave-service.yaml
+- frontend-deployment.yaml     
+- frontend-service.yaml  
