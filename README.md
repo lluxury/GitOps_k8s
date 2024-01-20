@@ -9,7 +9,7 @@
 
 
 
-###### CICD
+##### CICD
 
 - gitops-resources.yaml  SA及绑定
 - gitops-cronjob.yaml  协商循环
@@ -17,7 +17,7 @@
 
 
 
-###### 环境分区
+##### 环境分区
 
 需要一个位置存储文件,主,从,前端的部署和服务
 
@@ -32,7 +32,7 @@
 
 
 
-网络隔离
+##### 网络隔离
 
 - curlpod.yaml  配置curl
 - web.yaml  配置nginx
@@ -45,3 +45,19 @@
 - helm create xx , 生成环境
 - guestbook.yaml  
 - values-qa.yaml
+
+
+
+###### kustomization
+
+整体是一个项目,特点是复用
+
+|____envs
+| |____prod
+| | |____kustomization.yaml
+| |____qa
+| | |____kustomization.yaml
+| | |____debug.yaml
+|____base
+| |____deployment.yaml
+| |____kustomization.yaml
