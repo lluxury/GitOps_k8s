@@ -1,0 +1,15 @@
+image:
+  repository: acme.com/guestbook
+  tag: v1.0.0
+
+nameOverride: "sample-app"
+fullnameOverride: "sample-app"
+
+podAnnotations: {}
+
+environmentVars: [
+  {
+    name: "DEBUG",
+    value: "true"
+  }
+]

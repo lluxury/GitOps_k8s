@@ -38,3 +38,10 @@
 - web.yaml  配置nginx
 - block-other-namespace.yaml  ns策略
 
+
+
+###### helm
+
+- helm create xx , 生成环境
+- guestbook.yaml  
+- values-qa.yaml
