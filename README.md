@@ -92,3 +92,28 @@
 - DeploymentWait.sh , 推动更新,幂等
 - guestbook.yaml , 回滚
 - guestbook.yaml ,合规流水线
+
+
+
+###### replicaSet
+
+- replicaSet.yaml  不维护状态
+- deployment.yaml
+- deployment2.yaml
+
+
+
+###### 蓝绿
+
+- blue_deployment.yaml
+- blue_ingress.yaml
+- green_deployment.yaml
+- green_ingress.yaml  
+
+
+
+###### ArgoCD
+
+bluegreen_rollout.yaml
+
+ingress.yaml
