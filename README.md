@@ -83,3 +83,12 @@
 - my-service.jsonnet # 部署+服务
 
   
+
+
+监督不同环境进度
+
+- guestbook.yaml  
+- frontend-deployment.yaml, 对比并更新
+- DeploymentWait.sh , 推动更新,幂等
+- guestbook.yaml , 回滚
+- guestbook.yaml ,合规流水线
