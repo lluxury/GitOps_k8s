@@ -61,3 +61,25 @@
 |____base
 | |____deployment.yaml
 | |____kustomization.yaml
+
+
+
+ Jsonnet
+
+- basic.jsonnet   #可以注释
+- variables.jsonnet   # 可以变量复用
+- advanced.jsonnet  # 可以条件环境
+
+加餐
+
+- deploy-base.jsonnet # 模板
+
+- service-base.jsonnet # 注意防呆写法,这东西和helm很像啊
+
+- my-nginx.jsonnet # 实例,导入,实例化
+
+- demo-svc.jsonnet  # 服务实例
+
+- my-service.jsonnet # 部署+服务
+
+  
