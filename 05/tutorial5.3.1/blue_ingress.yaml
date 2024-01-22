@@ -8,11 +8,11 @@ spec:
     http:
       paths:
       - path: /
-        pathType: Prefix
+        pathType: Prefix      
         backend:
           service:
-            name: demo-service
-            port:
+            name: blue-service
+            port: 
               number: 80
 ---
 apiVersion: v1

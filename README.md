@@ -114,6 +114,29 @@
 
 ###### ArgoCD
 
-bluegreen_rollout.yaml
+- bluegreen_rollout.yaml
+- ingress.yaml
 
-ingress.yaml
+
+
+###### 金丝雀
+
+- blue_deployment.yaml
+- blue_ingress.yaml
+- green_deployment.yaml
+- canary_ingress.yaml #有变化
+
+
+
+**ArgoCD**
+
+- canary_rollout.yaml
+- ingress.yaml
+
+
+
+###### 渐进式
+
+- analysis-templates.yaml # 创建模板,收集指标
+- rollout-with-analysis.yaml # 主操作
+- ingress.yaml

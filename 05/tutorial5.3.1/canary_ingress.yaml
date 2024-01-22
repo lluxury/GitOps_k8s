@@ -1,7 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: demo-ingress
+  name: canary-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "10"
 spec:
   rules:
   - host: demo.info
@@ -11,9 +14,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: demo-service
+            name: green-service
             port:
-              number: 80
+              number: 80      
 ---
 apiVersion: v1
 data:
