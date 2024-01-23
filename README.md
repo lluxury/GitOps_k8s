@@ -52,15 +52,15 @@
 
 整体是一个项目,特点是复用
 
-|____envs
-| |____prod
-| | |____kustomization.yaml
-| |____qa
-| | |____kustomization.yaml
-| | |____debug.yaml
-|____base
-| |____deployment.yaml
-| |____kustomization.yaml
+|____envs  
+| |____prod  
+| | |____kustomization.yaml  
+| |____qa  
+| | |____kustomization.yaml  
+| | |____debug.yaml  
+|____base  
+| |____deployment.yaml  
+| |____kustomization.yaml    
 
 
 
@@ -140,3 +140,30 @@
 - analysis-templates.yaml # 创建模板,收集指标
 - rollout-with-analysis.yaml # 主操作
 - ingress.yaml
+
+
+
+###### 访问限制
+
+- role.yaml
+- role-binding.yaml # 写的少,抄的多
+- rbac.yaml  # 之前用的部署,需要更新
+- updated-rbac.yaml #值得参考
+
+
+
+###### secret
+
+- example-secret.yaml  # 简单示例
+- secret-volume.yaml   #挂载示例
+- secret-environment-variable.yaml #变量示例
+- secret.yaml  # api 使用
+- Dockerfile-with-secret  
+- vault-startup.sh  # 应用于脚本的示例
+- vault-agent-inject-annotations.yaml # 注入
+- vault-agent-inject-example.yaml # 自动获取注入示例
+- my-password.yaml #secret yaml
+- my-sealed-password.yaml # 加密后
+- kustomize-secret-plugin # 引用插件
+- gitopsbook/secretretriever/SecretRetriever #插件本身
+
