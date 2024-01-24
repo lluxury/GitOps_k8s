@@ -167,3 +167,23 @@
 - kustomize-secret-plugin # 引用插件
 - gitopsbook/secretretriever/SecretRetriever #插件本身
 
+
+
+可观测性
+
+- hotrod  示例
+- hotrod-app.yaml  #示例程序
+- jaeger 追踪
+- jaeger-all-in-one.yaml
+- bigpod.yaml  # 反例,会卡在Pending状态
+
+
+
+###### argoCD
+
+- pre-sync.yaml  # 同步前钩子
+- argocd-cm.yaml      
+- argocd-server.yaml  
+- argocd-rbac-cm.yaml 
+- kustomization.yaml  
+- sample-app.yaml
