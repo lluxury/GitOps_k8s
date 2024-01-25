@@ -182,8 +182,23 @@
 ###### argoCD
 
 - pre-sync.yaml  # 同步前钩子
-- argocd-cm.yaml      
-- argocd-server.yaml  
+- argocd-cm.yaml    # github OIDC 
+- argocd-rbac-cm.yaml  # 接上,授权 
+- kustomization.yaml  # 声明式配置
+- argocd-server.yaml   # 考虑先不改LB?
+- sample-app.yaml  # 应用部署
+
+
+
+jenkins x
+
+- argocd-cm.yaml      # 无关
 - argocd-rbac-cm.yaml 
-- kustomization.yaml  
-- sample-app.yaml
+- pre-sync-hook.yaml
+
+
+
+flux
+
+- flux-deployment-patch.yaml  #GPG
+- kustomization.yaml

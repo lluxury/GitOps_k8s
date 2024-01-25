@@ -1,0 +1,61 @@
+kind: Pod                                #A
+apiVersion: v1
+metadata:                                #B
+  name: nginx
+  namespace: argocd
+  labels:
+    app: nginx-test
+spec:                                    #C
+  restartPolicy: Always
+  volumes:                               #D
+    - name: data
+      emptyDir: {}
+  initContainers:
+  - name: nginx-init                     #E
+    image: docker/whalesay
+    command: [sh, -c]
+    args: [echo "<pre>$(cowsay -b 'Hello Kubernetes')</pre>" > /data/index.html]
+    volumeMounts:
+    - name: data
+      mountPath: /data
+  containers:
+  - name: nginx                          #F
+    image: nginx:1.11
+    volumeMounts:
+    - name: data
+      mountPath: /usr/share/nginx/html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: argocd
+spec:
+  selector:
+    app: nginx-test
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: argocd
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"  
+spec:
+  tls:
+    - secretName: argocd-tls 
+  rules:
+  - host: argocd.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 443
