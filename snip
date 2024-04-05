@@ -1,0 +1,43 @@
+{
+    "test": {
+        "prefix": "useRequest",
+        "body": [
+          "const {data, error, loading} = useRequest(getUsername);",
+          "if (error){",
+          "  return <div> failed to load</div>",
+          "}",
+          "if (loading){",
+          "  return xx",
+          "}",
+          ""
+        ],
+        "description": "test"
+      },
+      "Add multi-line comments": {
+        "scope": "javascript,typescript,vue",
+        "prefix": "funz",
+        "body": [
+          "/**",
+           " * @name ${1}",
+          " * @desc $2",
+          " * @author Falost",
+          " * @time $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND $CURRENT_DAY_NAME",
+          " * @param {${4|Object,String,Number,Array,Function|}} {$5}",
+          " * @return ${6: {*}}",
+          " */$10"
+        ],
+        "description": "Add multi-line comments"
+      },
+      "tag ": {
+        "prefix": "add_tag",
+        "body": [
+          "Tags: ",
+          "  - Key: \"keyname1\"",
+          "    Value: \"value1\"",
+          "  - Key: \"keyname2\"",
+          "    Value: \"value2\"",
+          ""
+        ],
+        "description": "tag "
+      }    
+}
